@@ -14,7 +14,7 @@ class CustomMagics(Magics):
         if not sys.platform.startswith("win"):
             raise Exception("Works only on Windows.")
          
-        #from ..tips_tricks.pythoncs import create_cs_function
+        from clrfunction import create_cs_function
         if line is not None:
             spl = line.strip().split(" ")
             name = spl[0]
