@@ -1,3 +1,33 @@
+
+import clr
+def create_cs_function(name, code, dependencies = None):
+    clr.AddReference("clrmagic")
+    from MagicIPython import MagicCS
+    from System import String
+    from System.Collections.Generic import List
+ 
+    if dependencies is not None and len(dependencies) > 0 :
+        myarray = List[String]()
+        for i,d in enumerate(dependencies):
+            myarray.Add( d )
+        myarray = myarray.ToArray()
+    else:
+        myarray = List[String]().ToArray()
+
+    obj = MagicCS.CreateFunction(name, code, myarray)
+    return lambda *params: run_cs_function(obj, params)
+ 
+def run_cs_function(func, params):
+    clr.AddReference("clrmagic")
+    from MagicIPython import MagicCS
+    from System.Collections.Generic import List
+    from System import Object
+ 
+    par = List[Object]()
+    for p in params :
+        par.Add ( p )
+    return MagicCS.RunFunction(func, par.ToArray())
+
 import sys
 from IPython.core.magic import Magics, magics_class, line_magic, cell_magic
 from IPython.core.magic import line_cell_magic
@@ -12,10 +42,10 @@ class CustomMagics(Magics):
         """
         Defines command ``%%CS``.
         """
-        if not sys.platform.startswith("win"):
-            raise Exception("Works only on Windows.")
+        #if not sys.platform.startswith("win"):
+        #    raise Exception("Works only on Windows.")
          
-        from clrfunction import create_cs_function
+        #from clrfunction import create_cs_function
         if line is not None:
             spl = line.strip().split(" ")
             name = spl[0]
