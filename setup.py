@@ -18,8 +18,8 @@ class clrmagic_build_ext(build_ext):
             _clr_compiler = "mcs"
         cmd = [ 
             _clr_compiler,
-            "clrmagic.cs",
-            "/target:library"
+            "/target:library",
+            "clrmagic.cs"
         ]
         check_call(" ".join(cmd), shell=True)    
 
