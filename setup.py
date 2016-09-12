@@ -2,6 +2,7 @@ from setuptools import setup
 from distutils.command.build_ext import build_ext
 from distutils.command.install_data import install_data
 import sys
+import os
 
 full_info = open("README.md").read()
 
