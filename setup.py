@@ -71,7 +71,7 @@ setup(
             Extension("clrmagic", sources=["clrmagic.cs"])
     ],
     data_files = [
-        ("{install_platlib}", ["{build_lib}/clrmagic.dll"])
+        ("{install_platlib}", ["clrmagic.dll"])
     ],
     cmdclass = {
         "build_ext": clrmagic_build_ext,
