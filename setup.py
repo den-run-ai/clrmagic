@@ -12,7 +12,10 @@ class clrmagic_build_ext(build_ext):
         """
         build clrmagic.dll using csc or mcs
         """
-        _clr_compiler = "csc" if sys.platform == "win32" else "mcs"
+        if sys.platform == "win32":
+            _clr_compiler = "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\csc.exe"
+        else:
+            _clr_compiler = "mcs"
         cmd = [ 
             _clr_compiler,
             "clrmagic.cs",
