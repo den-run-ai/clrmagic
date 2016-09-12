@@ -1,6 +1,21 @@
 from setuptools import setup
+from distutils.command.build_ext import build_ext
+import sys
 
 full_info = open("README.md").read()
+
+class clrmagic_build_ext(build_ext):
+    def build_extension(self, ext):
+        """
+        build clrmagic.dll using csc or mcs
+        """
+        _clr_compiler = "csc" if sys.platform == "win32" else "mcs"
+        cmd = [ 
+            _clr_compiler,
+            "clrmagic.cs",
+            "/target:library"
+        ]
+        check_call(" ".join(cmd), shell=True)    
 
 setup(
     name = "clrmagic",
@@ -25,7 +40,11 @@ setup(
         Programming Language :: Python :: Implementation :: CPython
         Topic :: Scientific/Engineering
         Topic :: Software Development
-    ]
+    ],
+    zip_safe = False,
+    cmdclass = {
+        "build_ext": clrmagic_build_ext
+    }
 )
     
     
