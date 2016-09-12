@@ -51,7 +51,7 @@ setup(
     url = "https://github.com/denfromufa/clrmagic",
     license = "MIT",
     keywords = ".NET CLR Mono Jupyter IPython notebook C# CSHARP pythonnet",
-    py_modules = ["clrmagic"],
+    py_modules = ["clrmagic", "clrfunction"],
     install_requires = ["pythonnet"],
     classifiers = [
         "Development Status :: 3 - Alpha"
