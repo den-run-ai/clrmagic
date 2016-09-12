@@ -1,8 +1,9 @@
-from setuptools import setup
+from setuptools import setup, Extension
 from distutils.command.build_ext import build_ext
 from distutils.command.install_data import install_data
 import sys
 import os
+from subprocess import check_call
 
 full_info = open("README.md").read()
 
@@ -37,6 +38,10 @@ class clrmagic_install_data(install_data):
 
         return install_data.run(self)
 
+setupdir = os.path.dirname(__file__)
+if setupdir:
+    os.chdir(setupdir)
+
 setup(
     name = "clrmagic",
     version = "0.0.1",
@@ -46,7 +51,7 @@ setup(
     url = "https://github.com/denfromufa/clrmagic",
     license = "MIT",
     keywords = ".NET CLR Mono Jupyter IPython notebook C# CSHARP pythonnet",
-    pymodules = ["clrmagic"],
+    #pymodules = ["clrmagic"],
     install_requires = ["pythonnet"],
     classifiers = [
         "Development Status :: 3 - Alpha"
@@ -62,13 +67,14 @@ setup(
         "Topic :: Software Development"
     ],
     zip_safe = False,
+    ext_modules=[
+            Extension("clrmagic", sources=["clrmagic.cs"])
+    ],
     data_files = [
-        ("{install_platlib}", ["clrmagic.dll"])
+        ("{install_platlib}", ["build_lib/clrmagic.dll"])
     ],
     cmdclass = {
         "build_ext": clrmagic_build_ext,
         "install_data": clrmagic_install_data
     }
 )
-    
-    
