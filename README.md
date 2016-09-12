@@ -2,6 +2,7 @@
 IPython cell magic to use .NET languages (C#, VB.NET, F#) from jupyter notebooks
 
 `pip install clrmagic`
+
 `jupyter notebook`
 
 ```python
