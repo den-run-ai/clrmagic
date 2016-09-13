@@ -1,6 +1,10 @@
 # clrmagic
 IPython cell magic to use .NET languages (C#, VB.NET, F#) from jupyter notebooks
 
+Based on a blog post from Xavier Dupré @sdpython:
+
+http://www.xavierdupre.fr/blog/2014-09-20_nojs.html
+
 `pip install git+https://github.com/denfromufa/clrmagic`
 
 `jupyter notebook`
