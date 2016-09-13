@@ -57,7 +57,7 @@ setup(
     py_modules = ["clrmagic"],
     install_requires = ["pythonnet"],
     classifiers = [
-        "Development Status :: 3 - Alpha"
+        "Development Status :: 3 - Alpha",
         "Environment :: Web Environment",
         "Framework :: IPython",
         "Intended Audience :: Science/Research",
