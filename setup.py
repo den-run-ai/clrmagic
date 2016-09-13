@@ -47,7 +47,7 @@ if setupdir:
 
 setup(
     name = "clrmagic",
-    version = "0.0.1",
+    version = "0.0.1a1",
     description = "IPython cell magic to use .NET languages",
     author = "Xavier Dupré, Denis Akhiyarov",
     author_email = "denis.akhiyarov@gmail.com",
