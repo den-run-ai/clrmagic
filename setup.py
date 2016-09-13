@@ -5,7 +5,7 @@ import sys
 import os
 from subprocess import check_call
 
-full_info = open("README.md").read()
+#full_info = open("README.md").read()
 
 class clrmagic_build_ext(build_ext):
     def build_extension(self, ext):
