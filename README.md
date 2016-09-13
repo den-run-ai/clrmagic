@@ -1,7 +1,7 @@
 # clrmagic
 IPython cell magic to use .NET languages (C#, VB.NET, F#) from jupyter notebooks
 
-Based on a blog post from Xavier Dupré (@sdpython) [https://github.com/sdpython]:
+Based on a blog post from Xavier Dupré [@sdpython] (https://github.com/sdpython):
 
 http://www.xavierdupre.fr/blog/2014-09-20_nojs.html
 
