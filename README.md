@@ -5,7 +5,9 @@ Based on a blog post from Xavier Dupré [@sdpython] (https://github.com/sdpython
 
 http://www.xavierdupre.fr/blog/2014-09-20_nojs.html
 
-`pip install git+https://github.com/denfromufa/clrmagic`
+`pip install clrmagic`
+
+https://pypi.python.org/pypi/clrmagic/
 
 `jupyter notebook`
 
